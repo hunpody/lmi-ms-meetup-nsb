@@ -4,6 +4,8 @@
 
 Content is in hungarian.
 
+Prezentáció: http://hunpody.github.io/lmi-ms-meetup-20150325-nsb
+
 #### Az előadás után elhangzott kérdések:
 
 (amire emlékszem :))
