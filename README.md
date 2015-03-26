@@ -37,7 +37,7 @@ Trial verzióval.
 
 * Min változtatnék, hogy többen is tudják használni a rendszert?
 
-Authorizációs logika felvétele, UserID az üzenetekbe, megfelelő szűrés SignalR. 
+Authorizációs logika felvétele, UserID az üzenetekbe, megfelelő szűrés a SignalR kliensek között. 
 
 * A Saga csak korrelációt képes tárolni?
 
