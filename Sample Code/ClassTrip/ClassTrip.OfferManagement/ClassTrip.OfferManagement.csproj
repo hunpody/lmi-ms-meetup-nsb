@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D293AE9-ED82-4095-A86F-A1826647AD8F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClassTrip.OfferManagement</RootNamespace>
+    <AssemblyName>ClassTrip.OfferManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Core">
+      <HintPath>..\packages\NServiceBus.5.2.0\lib\net45\NServiceBus.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Host">
+      <HintPath>..\packages\NServiceBus.Host.6.0.0\lib\net45\NServiceBus.Host.exe</HintPath>
+    </Reference>
+    <Reference Include="ServiceControl.Plugin.Nsb5.CustomChecks">
+      <HintPath>..\packages\ServiceControl.Plugin.Nsb5.CustomChecks.1.0.0\lib\net45\ServiceControl.Plugin.Nsb5.CustomChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceControl.Plugin.Nsb5.DebugSession">
+      <HintPath>..\packages\ServiceControl.Plugin.Nsb5.DebugSession.1.0.0\lib\net45\ServiceControl.Plugin.Nsb5.DebugSession.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceControl.Plugin.Nsb5.Heartbeat">
+      <HintPath>..\packages\ServiceControl.Plugin.Nsb5.Heartbeat.1.1.0\lib\net45\ServiceControl.Plugin.Nsb5.Heartbeat.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceControl.Plugin.Nsb5.SagaAudit">
+      <HintPath>..\packages\ServiceControl.Plugin.Nsb5.SagaAudit.1.0.0\lib\net45\ServiceControl.Plugin.Nsb5.SagaAudit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EndpointConfig.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f6bcd6095-5f67-4af1-95b5-41eadb805d68</SourceModelReference>
+      <ItemGuid>e64c96bc-5f03-4644-bde1-9743509ee400</ItemGuid>
+    </Compile>
+    <Compile Include="EndpointConfig.generated.cs">
+      <DependentUpon>EndpointConfig.cs</DependentUpon>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f6bcd6095-5f67-4af1-95b5-41eadb805d68</SourceModelReference>
+      <ItemGuid>3e4d0f36-bb63-44c7-a117-1bf1e27c2ccd</ItemGuid>
+    </Compile>
+    <Compile Include="Infrastructure\MessageConventions.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f6bcd6095-5f67-4af1-95b5-41eadb805d68</SourceModelReference>
+      <ItemGuid>f9dad66a-dfed-497f-81c8-76e932584a9f</ItemGuid>
+    </Compile>
+    <Compile Include="Infrastructure\Offers\OfferSaga.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f8e87025b-b2ca-493e-95ca-77a48c4a5c6a</SourceModelReference>
+      <ItemGuid>94cf26a6-3f0c-4578-b3b3-cda0c36ba973</ItemGuid>
+    </Compile>
+    <Compile Include="Offers\OfferSaga.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f8e87025b-b2ca-493e-95ca-77a48c4a5c6a</SourceModelReference>
+      <ItemGuid>fb1ce6e6-76f7-437d-91ab-1dfd05509675</ItemGuid>
+    </Compile>
+    <Compile Include="Offers\OfferSagaConfigureHowToFindSaga.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f8e87025b-b2ca-493e-95ca-77a48c4a5c6a</SourceModelReference>
+      <ItemGuid>5eee4bdd-1848-4d62-91bc-7e12734c34de</ItemGuid>
+    </Compile>
+    <Compile Include="Offers\OfferSagaSagaData.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f8e87025b-b2ca-493e-95ca-77a48c4a5c6a</SourceModelReference>
+      <ItemGuid>11ef767a-c271-47e8-bd26-a7f1eadf61e4</ItemGuid>
+    </Compile>
+    <Compile Include="Offers\OffersInvalidated.cs">
+      <ItemGuid>a64e78d9-fc68-40f5-b91b-4b4bebf0ab9d</ItemGuid>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <ItemGuid>5560d081-cff7-4623-b1f4-882cd4ed7400</ItemGuid>
+    </Compile>
+    <Compile Include="Infrastructure\INServiceBusComponent.cs">
+      <ItemGuid>abf66500-a228-4c43-94a0-92815108ea8c</ItemGuid>
+    </Compile>
+    <Compile Include="TransportConfig.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f6bcd6095-5f67-4af1-95b5-41eadb805d68</SourceModelReference>
+      <ItemGuid>c03b97f9-405d-447a-9b60-6131fc520455</ItemGuid>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f6bcd6095-5f67-4af1-95b5-41eadb805d68</SourceModelReference>
+      <ItemGuid>68377d06-ac02-4d4e-a7e1-8d15307789d9</ItemGuid>
+    </None>
+    <Content Include="Infrastructure\Logging.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f6bcd6095-5f67-4af1-95b5-41eadb805d68</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>153ad041-7ed3-40f7-85e1-73b4433c63b8</ItemGuid>
+    </Content>
+    <Content Include="Infrastructure\GeneratedCode\Config\MasterNodeConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f6bcd6095-5f67-4af1-95b5-41eadb805d68</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>ec4508fd-a34b-471e-9bd0-34ea003107f4</ItemGuid>
+    </Content>
+    <Content Include="Infrastructure\GeneratedCode\Config\MessageForwardingInCaseOfFaultConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f6bcd6095-5f67-4af1-95b5-41eadb805d68</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>747d985c-dae7-49e8-9891-c3efe2dd4afa</ItemGuid>
+    </Content>
+    <Content Include="Infrastructure\GeneratedCode\Config\TransportConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f6bcd6095-5f67-4af1-95b5-41eadb805d68</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>5e6a8154-7356-44f8-be97-8bc82eeb8819</ItemGuid>
+    </Content>
+    <Content Include="Infrastructure\GeneratedCode\Config\UnicastBusConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f6bcd6095-5f67-4af1-95b5-41eadb805d68</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>e2646613-81f2-42a6-a32b-3dd8e7581967</ItemGuid>
+    </Content>
+    <Content Include="Infrastructure\GeneratedCode\Config\TransportConnectionString.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f6bcd6095-5f67-4af1-95b5-41eadb805d68</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>e978d178-0893-4a20-bfb6-8fdd02998c6c</ItemGuid>
+    </Content>
+    <Content Include="Infrastructure\GeneratedCode\Config\SecondLevelRetriesConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f6bcd6095-5f67-4af1-95b5-41eadb805d68</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>9af373ca-cb4a-4892-bb74-b062a6050e06</ItemGuid>
+    </Content>
+    <Content Include="Infrastructure\GeneratedCode\Config\AuditConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f6bcd6095-5f67-4af1-95b5-41eadb805d68</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>5abdb022-6791-4d73-bbda-47e4436d6a43</ItemGuid>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassTrip.Contracts\ClassTrip.Contracts.csproj">
+      <Project>{649F55AB-BAAE-4CD5-87B5-808328D3E563}</Project>
+      <Name>ClassTrip.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassTrip.Internal\ClassTrip.Internal.csproj">
+      <Project>{546355CB-E9A9-4332-8FF8-AAD9E9504D1E}</Project>
+      <Name>ClassTrip.Internal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProjectDir)$(OutputPath)NServiceBus.Host.exe</StartProgram>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

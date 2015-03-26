@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{546355CB-E9A9-4332-8FF8-AAD9E9504D1E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClassTrip.Internal</RootNamespace>
+    <AssemblyName>ClassTrip.Internal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NServiceBus.Core">
+      <HintPath>..\packages\NServiceBus.5.2.0\lib\net45\NServiceBus.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Offers\AcceptOffer.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f8e97f21c-2623-4df1-9c67-b50e1311b650</SourceModelReference>
+      <ItemGuid>3678219c-9328-4f56-86d2-d8f216d90e65</ItemGuid>
+    </Compile>
+    <Compile Include="Offers\ScheduledMakeOffer.cs">
+      <ItemGuid>5b1bd96c-7318-4001-9c0e-f065ac46d956</ItemGuid>
+    </Compile>
+    <Compile Include="Offers\MakeOffer.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f6d4d8954-6232-46d5-9480-dd1739413c78</SourceModelReference>
+      <ItemGuid>4791192a-3a42-43a4-9f19-0a5fd9be9d97</ItemGuid>
+    </Compile>
+    <Compile Include="Offers\RequestOffer.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f03854b0e-7a91-426b-9280-6f6ffbe2e386</SourceModelReference>
+      <ItemGuid>f0a4d3bd-19bb-41b1-be1a-c0fce269619a</ItemGuid>
+    </Compile>
+    <Compile Include="Offers\RequestOfferResponse.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/ClassTrip/Element/c:\ClassTrip\ClassTrip.slnbldr%252f4553d9a9-afda-4393-8f33-9434f891b03a</SourceModelReference>
+      <ItemGuid>4bd13f6b-5da1-41d8-96a2-ff198499f90e</ItemGuid>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <ItemGuid>fcac3723-3c3c-413a-b0c1-e22b576911c4</ItemGuid>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

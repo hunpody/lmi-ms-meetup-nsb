@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Main</title>
+    
+    <script src="~/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.signalR-1.0.0.min.js" type="text/javascript"></script>
+    
+    <script src="~/signalr/hubs" type="text/javascript"></script>
+    
+    <style type="text/css">
+        ul {
+            font-size: 130%;
+        }
+        button {
+            font-size: 80%;
+        }
+    </style>
+
+    <script>
+        function accept(request, offer) {
+            $.ajax({
+                type: 'POST',
+                url: '/testmessages/accept',
+                data: { RequestId: request, OfferId: offer }
+            });
+        }
+
+        function requestOffer(headCount) {
+            $.ajax({
+                type: 'POST',
+                url: '/testmessages/requestOffer',
+                data: { headCount: headCount }
+            });
+        }
+
+        $(function () {
+            var requestOfferResponseHub = $.connection.requestOfferResponseHub;
+            requestOfferResponseHub.client.requestOfferResponse = function (message) {
+                $('#requests').prepend('<li>Classtrip request for ' + message.Request.HeadCount + ' kids.<ul id="offers_' + message.Request.Id + '"></ul></li>');
+            };
+
+            var offerMadeHub = $.connection.offerMadeHub;
+            offerMadeHub.client.offerMade = function (message) {
+                $('#offers_' + message.Offer.RequestId).prepend('<li>$' + message.Offer.Price + ' <button onclick="accept(\'' + message.Offer.RequestId + '\',\'' + message.Offer.Id + '\')">Accept</button></li>');
+            };
+
+            var requestCompletedHub = $.connection.requestCompletedHub;
+            requestCompletedHub.client.requestCompleted = function (message) {
+                console.log(message);
+                var ul = $('#offers_' + message.Request.Id);
+                ul.empty();
+                if (message.AcceptedOffer != null) {
+                    ul.prepend('<li><strong>Accepted offer: $' + message.AcceptedOffer.Price + '</strong></li>');
+                }
+                else {
+                    ul.prepend('<li><strong>No offers were accepted in a reasonable time.</strong></li>');
+                }
+            };
+
+            //Start the Hub Connection
+            $.connection.hub.start();
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h3>New request</h3>
+        <div>
+            Request: <input type="text" id="req_headCount" /> kids.<button onclick="requestOffer(document.getElementById('req_headCount').value)">OK</button>
+         </div>
+        <h3>Requests:</h3>
+        <ul id="requests">
+            
+        </ul>
+    </div>
+</body>
+</html>
