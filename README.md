@@ -46,3 +46,5 @@ Bármilyen adatot tárol, alap esetben RavenDB a saga tároló, ahhoz pedig csak
 * Tudsz mondani egy példát, amikor magadnak kell üzenni?
 
 Főleg timeout-oknál hasznos, amikor az üzleti logika olyan, hogy valamilyen feltétel ellenőrzését megadott idővel eltolva kell elvégezni. A bemutatott példához igazodva: beérkezett-e ajánlat, van-e aktivitás, stb. Ilyenkor minden aktivitáskor lehet egy időzített üzenetet küldeni magunknak, ami tudja, hogy mikor volt az utolsó aktivitás, és ha az üzenet visszaérkezésekor nem volt annál újabb, akkor lezárhatjuk a folyamatot például.
+
+Termékrendelesénél szoktak még olyat, hogy kiadatbányászott összefüggésekre alapozva, miszerint mondjuk a vásárlások lemondásának nagy része fél órán belül történik, várnak fél órát, mielőtt a szállításra átadnák a konkrét árut. Ezzel fél órán belül valóban költségmentes lesz a boltnak is a lemondás. Ekkor az üzenet ShipOrderIfNotCancelled lehetne, amely csak akkor viszi tovább a folyamatot, ha időközben nem gondolta meg magát a vásárló.
